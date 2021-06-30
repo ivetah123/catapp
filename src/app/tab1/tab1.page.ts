@@ -9,6 +9,7 @@ import { CatService } from '../apis/cat.service';
 export class Tab1Page {
   cat = '';
   race = '';
+  description = '';
 
   constructor(private catS: CatService) {}
 
@@ -20,6 +21,7 @@ export class Tab1Page {
     console.log(result);
     this.cat = result[0].url;
     this.race = result[0].breeds[0].name;
-    console.log(this.race);
+    this.description = result[0].breeds[0].description;
+    console.log(this.description);
   }
 }
