@@ -23,5 +23,11 @@ export class Tab1Page {
     this.race = result[0].breeds[0].name;
     this.description = result[0].breeds[0].description;
     console.log(this.description);
+    //--------AUDIO--------
+    const sound = new Audio();
+    const rnd11 = Math.floor(Math.random() * 11) + 1;
+    sound.src = '../../assets/sounds/' + rnd11 + '.mp3';
+    sound.load();
+    sound.play();
   }
 }
