@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CatService } from '../apis/cat.service';
 
 @Component({
   selector: 'app-tab2',
@@ -6,7 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
-  constructor() {}
+  breedsArray = [];
+  daCat = '';
+  constructor(private catS: CatService) {}
+  ngOnInit() {
+    this.loadBreeds();
+  }
+  async loadBreeds() {
+    const result = await this.catS.getBreeds();
+    console.log(result[1].name);
+    this.breedsArray = result;
+  }
+  async selectBreed(breed: string) {
+    const result = await this.catS.getCatByBreed(breed);
+    this.daCat = result[0];
+    console.log(this.daCat);
+    
+  }
 
 }

@@ -1,0 +1,16 @@
+<!-- <p>
+  cat-card works!
+</p> -->
+<ion-card *ngIf="catObject">
+  <ion-card-content>
+    <ion-title>{{catObject.breeds[0].name}}</ion-title>
+    <br>
+    <ion-img src="{{catObject.url}}"></ion-img>
+    <br>
+    <p>{{catObject.breeds[0].description}}</p>
+  </ion-card-content>
+  <!-- fab placed to the bottom end -->
+  <ion-fab-button size="small" color="danger" (click)="handleClick()">
+    <ion-icon name="heart-outline"></ion-icon>
+  </ion-fab-button>
+</ion-card>

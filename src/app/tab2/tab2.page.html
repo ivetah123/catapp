@@ -13,5 +13,15 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <!-- <app-explore-container name="Tab 2 page"></app-explore-container> -->
+
+  <section>
+    <!-- FOR LOOP CLONING ON categoriesArray -->
+    <ion-chip outline color="danger" *ngFor="let breedLoop of breedsArray"
+      (click)="selectBreed(breedLoop.id)">
+      <ion-label>{{breedLoop.name}}</ion-label>
+    </ion-chip>
+  </section>
+
+  <app-cat-card [catObject]="daCat"></app-cat-card> 
 </ion-content>

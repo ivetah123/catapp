@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CatService {
-
+  favoritesArray: any[] = [];
   constructor(private http: HttpClient) { }
 
   createAuthorizationHeader(headers: Headers) {
@@ -16,4 +16,17 @@ export class CatService {
   async getRandomCat(): Promise<any> {
     return await this.http.get('https://api.thecatapi.com/v1/images/search?has_breeds=true&include_breeds=true').toPromise();
   }
+  async getBreeds(): Promise<any> {
+    return await this.http.get('https://api.thecatapi.com/v1/breeds').toPromise();
+  }
+  async getCatByBreed(catParam: string): Promise<any> {
+    return await this.http
+      .get('https://api.thecatapi.com/v1/images/search?breed_ids=' + catParam)
+      .toPromise();
+  }
+  addToFav(cat) {
+    this.favoritesArray.push(cat);
+    console.log(this.favoritesArray);
+  }
+
 }
