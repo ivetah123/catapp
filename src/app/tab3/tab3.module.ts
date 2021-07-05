@@ -18,6 +18,6 @@ import { CatCardComponent } from '../components/cat-card/cat-card.component';
     RouterModule.forChild([{ path: '', component: Tab3Page }]),
     Tab3PageRoutingModule,
   ],
-  declarations: [Tab3Page, CatCardComponent]
+  declarations: [Tab3Page, /*CatCardComponent*/]
 })
 export class Tab3PageModule {}
