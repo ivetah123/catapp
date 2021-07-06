@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CatService } from '../apis/cat.service';
+import { SharedModule } from '../shared/shared.module';
 
 @Component({
   selector: 'app-tab1',
