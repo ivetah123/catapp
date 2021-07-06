@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedComponent } from "./components/shared/shared.component";
-import { CatCardComponent } from '../components/cat-card/cat-card.component';
 
 
 @NgModule({
-  declarations: [CatCardComponent, SharedComponent],
+  declarations: [SharedComponent, SharedComponent],
   imports: [
     CommonModule
   ],
-  exports: [CatCardComponent, SharedComponent]
+  exports: [SharedComponent, SharedComponent]
 })
 export class SharedModule { }
